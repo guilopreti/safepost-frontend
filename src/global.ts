@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -8,8 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #f0f2f5;
-    color: #1a1a1a;
+    background-color: #121214; /* Fundo principal dark */
+    color: #e1e1e6; /* Texto claro */
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
