@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# SafePost
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação web moderna e responsiva focada em simular um ambiente social seguro. A principal funcionalidade do SafePost é a sua **moderação de conteúdo impulsionada por IA**, que avalia as postagens dos usuários (tanto texto quanto imagens) em busca de conteúdos nocivos antes de sua publicação.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Moderação de Conteúdo:** Intercepta as postagens e analisa rigorosamente por discurso de ódio, violência, conteúdo sexual e automutilação.
+- **Tags Automáticas em Imagens:** Gera automaticamente hashtags relevantes baseadas no conteúdo visual de imagens aprovadas.
+- **UI/UX Interativa:** Utiliza modais flutuantes e notificações toast dinâmicas para manter o usuário informado sobre o status da moderação sem perder o estado e contexto do formulário.
+- **Mobile-First & Tema Escuro:** Construído focado em componentes altamente responsivos e em um visual moderno com Dark Mode nativo.
+- **Feed Simulado (Mock):** Simula um feed em tempo real com gerenciamento de estado local, sem a necessidade de banco de dados para testes de front-end.
 
-## React Compiler
+## Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Biblioteca / Framework:** React
+- **Linguagem:** TypeScript
+- **Build Tool:** Vite
+- **Estilização:** styled-components
+- **Cliente HTTP:** Axios
+- **Notificações:** goey-toast
 
-## Expanding the ESLint configuration
+## Pré-requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v18 ou superior recomendado)
+- npm, yarn, ou pnpm
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Como Rodar o Projeto
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone o repositório:**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   git clone <URL-do-repositorio>
+   cd safepost-frontend
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Instale as dependências:**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+   ```bash
+   yarn install
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Configure as Variáveis de Ambiente:**
+   Crie um arquivo `.env` na raiz do projeto e adicione a URL da sua API de moderação (Azure / Backend):
+
+   ```env
+   VITE_API_URL=http://localhost:3333
+   ```
+
+4. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   yarn dev
+   ```
+   A aplicação estará disponível em `http://localhost:5173`.
+
+## Estrutura do Projeto
+
+- `/src/components` - Componentes reutilizáveis de interface (Header, PostForm, Feed, ModerationResult)
+- `/src/services` - Integração com a API e lógica de requisições
+- `/src/types` - Tipagens e definições do TypeScript
+- `/src/mocks` - Dados simulados para iniciar estado visual do feed
