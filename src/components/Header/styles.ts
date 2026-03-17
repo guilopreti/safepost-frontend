@@ -25,9 +25,22 @@ export const Logo = styled.h1`
   font-weight: 700;
   letter-spacing: -0.5px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  img {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+  }
 
   @media (min-width: 768px) {
     font-size: 1.5rem;
+
+    img {
+      width: 40px;
+    }
   }
 `;
 

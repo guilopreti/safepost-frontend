@@ -8,7 +8,10 @@ interface HeaderProps {
 export function Header({ username, setUsername }: HeaderProps) {
   return (
     <Container>
-      <Logo>SafePost</Logo>
+      <Logo>
+        <img src="/safePostIcon.png" alt="" />
+        SafePost
+      </Logo>
 
       <UserSection>
         <Avatar>
