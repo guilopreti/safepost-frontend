@@ -23,10 +23,9 @@ export const BarTrack = styled.div`
 `;
 
 const getScoreColor = (score: number) => {
-  if (score === 0) return "#22c55e"; // Verde (Seguro)
-  if (score === 2) return "#86efac"; // Verde claro (Baixo)
-  if (score === 4) return "#f59e0b"; // Amarelo (Médio)
-  return "#ef4444"; // Vermelho (Alto)
+  if (score === 2) return "#eab308"; // Amarelo (Risco Baixo - Reprovado)
+  if (score === 4) return "#f97316"; // Laranja (Risco Médio - Reprovado)
+  return "#ef4444"; // Vermelho (Risco Alto / Fallback)
 };
 
 export const BarFill = styled.div<{ $score: number }>`
