@@ -2,6 +2,8 @@
 
 Uma aplicação web moderna e responsiva focada em simular um ambiente social seguro. A principal funcionalidade do SafePost é a sua **moderação de conteúdo impulsionada por IA**, que avalia as postagens dos usuários (tanto texto quanto imagens) em busca de conteúdos nocivos antes de sua publicação.
 
+Acesse em: https://safepost-frontend.vercel.app/
+
 ## Funcionalidades
 
 - **Moderação de Conteúdo:** Intercepta as postagens e analisa rigorosamente por discurso de ódio, violência, conteúdo sexual e automutilação.
